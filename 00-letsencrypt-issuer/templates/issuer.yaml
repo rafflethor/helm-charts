@@ -1,0 +1,25 @@
+# 1) CREATE A SECRET
+# ===============
+# Before creating a ca issuer you have to create a secret of type tls from a own certificate
+#
+# openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /tmp/ca.key -out /tmp/ca.crt -subj "/CN=rafflethor.io/O=rafflethor.io"
+# kubectl create secret tls rafflethor-tls --key /tmp/ca.key --cert /tmp/ca.crt
+#
+# 2) CREATE ISSUER
+# =============
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Issuer
+metadata:
+  name: {{ .Values.issuer.name }}
+  namespace: {{ .Values.issuer.namespace }}
+spec:
+  acme:
+    # The ACME server URL
+    server: {{ .Values.issuer.letsencrypt.server }}
+    # Email address used for ACME registration
+    email: {{ .Values.issuer.letsencrypt.email }}
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: {{ .Values.issuer.name }}
+    # Enable the HTTP-01 challenge provider
+    http01: {}

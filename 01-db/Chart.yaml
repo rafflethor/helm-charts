@@ -1,0 +1,14 @@
+apiVersion: "v1"
+name: rafflethor-database
+version: 1.0.0
+description: Deploys Rafflethor's database
+keywords:
+  - Database
+  - PostgreSQL
+home: https://api.rafflethor.io
+sources:
+  - https://github.com/rafflethor/k8s/api/charts/db
+maintainers:
+  - name: Mario Garcia
+    url: mariogarcia.github.io/blog
+engine: gotpl

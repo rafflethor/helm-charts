@@ -1,0 +1,26 @@
+# namespace where the application will be installed
+namespace: rafflethor
+
+# letscrypt-type issuer name
+issuer:
+  name: letsencrypt-staging
+
+# app general configuration
+app:
+  # name of the application
+  name: api
+  # which is the tier the app belongs
+  tier: api
+  service:
+    # which port will expose the service
+    port: 5050
+  ingress:
+    # which domain the application will be available from
+    host: api.rafflethor.io
+  docker:
+    # name of the docker image
+    label: rafflethor-docker-rafflethor.bintray.io/api
+    # version of the docker image
+    version: 1.0.12
+    # docker container exposed port
+    containerPort: 5050

@@ -1,0 +1,19 @@
+# namespace where the application will be installed
+namespace: rafflethor
+
+# app general configuration
+app:
+  # name of the application
+  name: apidb
+  # which is the tier the app belongs
+  tier: database
+  service:
+    # which port will expose the service
+    port: 5432
+  docker:
+    # name of the docker image
+    label: rafflethor-docker-rafflethor.bintray.io/db
+    # version of the docker image
+    version: 1.0.1-alpine
+    # docker container exposed port
+    containerPort: 5432

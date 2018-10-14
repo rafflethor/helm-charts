@@ -1,0 +1,19 @@
+namespace: rafflethor
+
+issuer:
+  name: letsencrypt-staging
+  letsencrypt:
+    email: johndoe@email.com
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+
+certificate:
+  name: rafflethor-staging-crt
+  secretName: rafflethor-tls
+  dnsNames:
+    - api.test.rafflethor.io
+    - admin.test.rafflethor.io
+    - www.test.rafflethor.io
+  domains:
+    - api.test.rafflethor.io
+    - admin.test.rafflethor.io
+    - www.test.rafflethor.io

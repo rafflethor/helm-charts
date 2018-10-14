@@ -1,0 +1,14 @@
+apiVersion: "v1"
+name: rafflethor-api
+version: 1.0.0
+description: Deploys Rafflethor's GraphQL API
+keywords:
+  - GraphQL
+  - API
+home: https://api.rafflethor.io
+sources:
+  - https://github.com/rafflethor/k8s/api
+maintainers:
+  - name: Mario Garcia
+    url: mariogarcia.github.io/blog
+engine: gotpl
